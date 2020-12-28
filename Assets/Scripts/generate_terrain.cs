@@ -6,6 +6,7 @@ public class generate_terrain : MonoBehaviour
 {
     public GameObject grass;
     public GameObject dirt;
+    public GameObject cobblestone;
 
     void Start()
     {
@@ -16,6 +17,8 @@ public class generate_terrain : MonoBehaviour
                 Instantiate(grass, new Vector3((float)i, -1f, (float)j),
                     new Quaternion(0, 0, 0, 0));
                 Instantiate(dirt, new Vector3((float)i, -2f, (float)j),
+                    new Quaternion(0, 0, 0, 0));
+                Instantiate(cobblestone, new Vector3((float)i, -3f, (float)j),
                     new Quaternion(0, 0, 0, 0));
             }
         }

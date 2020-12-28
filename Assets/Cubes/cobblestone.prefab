@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1274766884201907976}
   m_Layer: 0
   m_Name: cobblestone
-  m_TagString: Untagged
+  m_TagString: Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
