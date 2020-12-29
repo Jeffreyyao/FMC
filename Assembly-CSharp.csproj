@@ -57,8 +57,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\character_control.cs" />
      <Compile Include="Assets\Scripts\generate_terrain.cs" />
-     <Compile Include="Assets\Scripts\camera_control.cs" />
      <Compile Include="Assets\Scripts\block_create_destroy.cs" />
+     <Compile Include="Assets\Scripts\camera_control.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/jeffreyyao/Documents/FMC/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
