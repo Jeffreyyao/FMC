@@ -1,20 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - block_create_destroy
     - camera_control
     - character_control
     - generate_terrain
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
-    - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Text
@@ -38,6 +35,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -49,19 +48,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11804}
     - Class: 114
-      Script: {instanceID: 11980}
+      Script: {instanceID: 11844}
     - Class: 114
-      Script: {instanceID: 12458}
+      Script: {instanceID: 11982}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 13032}
     - Class: 114
-      Script: {instanceID: 13290}
+      Script: {instanceID: 13234}
     - Class: 114
-      Script: {instanceID: 13456}
+      Script: {instanceID: 13294}
     - Class: 114
-      Script: {instanceID: 13840}
-    - Class: 114
-      Script: {instanceID: 14556}
+      Script: {instanceID: 13460}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -89,6 +86,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: character_control
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -319,7 +322,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: dcd6b7c3d90c0b1257e92abe9a62d4eb
+      Hash: 16b7aa27df1ef30f02539d04b3aec6b7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: generate_terrain
@@ -365,6 +368,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: Physics2DRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: ca78cf6a54851c96e76a38e35e885cb0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: block_create_destroy
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -509,12 +518,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: character_control
   platform: 2
   scenePathNames:
   - Assets/Scenes/main_scene.unity
