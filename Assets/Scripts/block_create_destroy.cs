@@ -7,13 +7,18 @@ public class block_create_destroy : MonoBehaviour
 {
     public Camera camera;
 
-    public Text text;
+    public RawImage cubeIndicator;
 
     public GameObject cobblestone;
     public GameObject grass;
     public GameObject dirt;
 
+    public Texture cobblestone_t;
+    public Texture grass_t;
+    public Texture dirt_t;
+
     List<GameObject> cubeList;
+    List<Texture> textureList;
     int cubeListIndex = 0;
 
     void Start()
@@ -24,10 +29,18 @@ public class block_create_destroy : MonoBehaviour
             grass,
             dirt
         };
+        textureList = new List<Texture>()
+        {
+            cobblestone_t,
+            grass_t,
+            dirt_t
+        };
     }
 
     void Update()
     {
+        cubeIndicator.rectTransform.anchoredPosition = new Vector3(-Screen.width/2, Screen.height/2-80, 0);
+
         //Switch cubeListIndex
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -36,7 +49,7 @@ public class block_create_destroy : MonoBehaviour
             {
                 cubeListIndex = 0;
             }
-            text.text = cubeList[cubeListIndex].name;
+            cubeIndicator.texture = textureList[cubeListIndex];
         }
 
         RaycastHit hit;
