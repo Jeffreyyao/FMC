@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camera_control : MonoBehaviour
 {
-	float speed = 7f;
+	float speed = 5f;
     float pitch = 0f;
 
     void Start()
@@ -17,5 +17,16 @@ public class camera_control : MonoBehaviour
     {
         pitch -= speed * Input.GetAxis("Mouse Y");
         transform.localEulerAngles = new Vector3(pitch, 0f, 0f);
+
+        if (Input.GetKeyDown(KeyCode.Escape) && Cursor.visible==true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 }

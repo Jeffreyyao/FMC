@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/main_scene.unity:
@@ -52,6 +53,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11982}
     - Class: 114
+      Script: {instanceID: 12948}
+    - Class: 114
       Script: {instanceID: 13032}
     - Class: 114
       Script: {instanceID: 13234}
@@ -72,6 +75,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -370,7 +375,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: ca78cf6a54851c96e76a38e35e885cb0
+      Hash: 8a5e79efb0a3a52a0558c70cbee77a6a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: block_create_destroy

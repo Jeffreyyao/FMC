@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class block_create_destroy : MonoBehaviour
 {
-    public Camera camera;
+    public Camera cam;
 
     public RawImage cubeIndicator;
 
     public GameObject cobblestone;
     public GameObject grass;
     public GameObject dirt;
+    public GameObject glowstone;
+    public GameObject brick;
 
     public Texture cobblestone_t;
     public Texture grass_t;
     public Texture dirt_t;
+    public Texture glowstone_t;
+    public Texture brick_t;
 
     List<GameObject> cubeList;
     List<Texture> textureList;
@@ -27,13 +31,17 @@ public class block_create_destroy : MonoBehaviour
         {
             cobblestone,
             grass,
-            dirt
+            dirt,
+            glowstone,
+            brick
         };
         textureList = new List<Texture>()
         {
             cobblestone_t,
             grass_t,
-            dirt_t
+            dirt_t,
+            glowstone_t,
+            brick_t
         };
     }
 
@@ -53,12 +61,12 @@ public class block_create_destroy : MonoBehaviour
         }
 
         RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
-        //Destroy Cubes
+        //Destroy Cube
         if (Input.GetKeyDown(KeyCode.Mouse0)||Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 10))
             {
                 if (hit.transform.tag != "Cube")
                 {
@@ -74,7 +82,7 @@ public class block_create_destroy : MonoBehaviour
         //Create Cube
         if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.R))
         {
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 10))
             {
                 Vector3 hitPos = hit.point;
                 Vector3 hitTransPos;
