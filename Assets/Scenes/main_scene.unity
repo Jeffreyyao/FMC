@@ -295,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176808047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 588586726}
@@ -347,11 +347,13 @@ MonoBehaviour:
   dirt: {fileID: 162677536269067462, guid: fd6de1dcf93354acf98c3d4c6ac5d8bb, type: 3}
   glowstone: {fileID: 5537893829325922700, guid: b917bb5c0bec249f6ad8f3691b0f1111, type: 3}
   brick: {fileID: 3869079415263885733, guid: a32535c1a73b1492fb93858dc64aa328, type: 3}
+  glass: {fileID: 1654238225262990198, guid: a3fdfd19738a64c058d586c81c10a696, type: 3}
   cobblestone_t: {fileID: 2800000, guid: c714e389e55f94959978739320704972, type: 3}
   grass_t: {fileID: 2800000, guid: 815c7517de6c24d7abc0523faf603959, type: 3}
   dirt_t: {fileID: 2800000, guid: 29789c2d684f9412c89f03c56fb2808d, type: 3}
   glowstone_t: {fileID: 2800000, guid: 69f0060c42e734881bc8d77cfaeba69e, type: 3}
   brick_t: {fileID: 2800000, guid: 7acb9399aa3ba4163a88987782e5cbf1, type: 3}
+  glass_t: {fileID: 2800000, guid: 49d118ed0f9374a38a159d6f39564d22, type: 3}
 --- !u!1 &588586722
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,12 +14,14 @@ public class block_create_destroy : MonoBehaviour
     public GameObject dirt;
     public GameObject glowstone;
     public GameObject brick;
+    public GameObject glass;
 
     public Texture cobblestone_t;
     public Texture grass_t;
     public Texture dirt_t;
     public Texture glowstone_t;
     public Texture brick_t;
+    public Texture glass_t;
 
     List<GameObject> cubeList;
     List<Texture> textureList;
@@ -33,7 +35,8 @@ public class block_create_destroy : MonoBehaviour
             grass,
             dirt,
             glowstone,
-            brick
+            brick,
+            glass
         };
         textureList = new List<Texture>()
         {
@@ -41,7 +44,8 @@ public class block_create_destroy : MonoBehaviour
             grass_t,
             dirt_t,
             glowstone_t,
-            brick_t
+            brick_t,
+            glass_t
         };
     }
 
