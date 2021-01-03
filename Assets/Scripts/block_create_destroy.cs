@@ -66,7 +66,7 @@ public class block_create_destroy : MonoBehaviour
         //Destroy Cube
         if (Input.GetKeyDown(KeyCode.Mouse0)||Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(ray, out hit, 10))
+            if (Physics.Raycast(ray, out hit, 15))
             {
                 if (hit.transform.tag != "Cube")
                 {
@@ -82,7 +82,7 @@ public class block_create_destroy : MonoBehaviour
         //Create Cube
         if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.R))
         {
-            if (Physics.Raycast(ray, out hit, 10))
+            if (Physics.Raycast(ray, out hit, 15))
             {
                 Vector3 hitPos = hit.point;
                 Vector3 hitTransPos;
