@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/generate_terrain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/character_control.cs">
     <Files>
       <File FileName="Assets/Scripts/generate_terrain.cs" Line="48" Column="25" />
-      <File FileName="Assets/Scripts/character_control.cs" />
+      <File FileName="Assets/Scripts/character_control.cs" Line="23" Column="73" />
       <File FileName="Assets/Scripts/camera_control.cs" />
-      <File FileName="Assets/Scripts/block_create_destroy.cs" />
+      <File FileName="Assets/Scripts/block_create_destroy.cs" Line="24" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +13,7 @@
             <Node name="Assembly-CSharp" expanded="True">
               <Node name="Assets" expanded="True">
                 <Node name="Scripts" expanded="True">
-                  <Node name="generate_terrain.cs" selected="True" />
+                  <Node name="character_control.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
