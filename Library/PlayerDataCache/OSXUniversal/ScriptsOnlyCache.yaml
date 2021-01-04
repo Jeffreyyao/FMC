@@ -38,8 +38,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -329,7 +327,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 16b7aa27df1ef30f02539d04b3aec6b7
+      Hash: 19f30e94f7e70c43f1e15b85595c121c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: generate_terrain
@@ -377,7 +375,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 8a5e79efb0a3a52a0558c70cbee77a6a
+      Hash: ed875a1c3a5a67961e3de7cf2d68deb2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: block_create_destroy
