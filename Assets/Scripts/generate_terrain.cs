@@ -5,75 +5,69 @@ using UnityEngine;
 public class generate_terrain : MonoBehaviour
 {
     public GameObject grass;
+    public GameObject character;
 
     System.Random r = new System.Random();
 
-    float size = 50;
+    int offsetX, offsetY;
+
+    float size = 30;
+
+    Vector3 lastCharPos;
+
+    List<GameObject> cubes = new List<GameObject>();
+
+    List<Vector2> map = new List<Vector2>();
+
+    List<Vector2> addedCubes = new List<Vector2>();
+
+    float lastRefreshTime = 0f;
 
     void Start()
     {
-        int[,] grass_top = generate_top();
+        //Randomize position offset for randomized perlin noise
+        offsetX = r.Next(0, 999);
+        offsetY = r.Next(0, 999);
 
-        //Create top grass meshes
+        //Create top grass cubes
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                Instantiate(grass,
-                    new Vector3(i, grass_top[i, j], j), Quaternion.identity);
+                cubes.Add(Instantiate(grass,
+                    new Vector3(i, generate_top(i,j), j), Quaternion.identity));
+                map.Add(new Vector2(i, j));
             }
         }
+        character.transform.position = new Vector3(size / 2, 4, size / 2);
     }
 
-    void create_mesh(Material mat, Vector3[] vertices)
+    void Update()
     {
-        GameObject t = new GameObject();
-        t.tag = "Cube";
-        MeshRenderer mr = t.AddComponent<MeshRenderer>();
-        mr.sharedMaterial = new Material(mat);
-        MeshFilter mf = t.AddComponent<MeshFilter>();
-        Mesh m = new Mesh();
-        m.vertices = vertices;
-        int[] tris = new int[6]
+        if (Time.time - lastRefreshTime > .5f)
         {
-            0,2,1,2,3,1
-        };
-        m.triangles = tris;
-        Vector3[] normals = new Vector3[4]
-        {
-            -Vector3.forward,
-            -Vector3.forward,
-            -Vector3.forward,
-            -Vector3.forward
-        };
-        m.normals = normals;
-
-        Vector2[] uv = new Vector2[4]
-        {
-            new Vector2(0, 0),
-            new Vector2(1, 0),
-            new Vector2(0, 1),
-            new Vector2(1, 1)
-        };
-        m.uv = uv;
-        mf.mesh = m;
-        t.AddComponent<MeshCollider>();
-    }
-
-    int[,] generate_top()
-    {
-        int offsetX = r.Next(0, 999);
-        int offsetY = r.Next(0, 999);
-        float scale = 20;
-        int[,] top = new int[(int)size, (int)size];
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
+            for (int i = (int)character.transform.position.x - (int)size / 2;
+                i < (int)character.transform.position.x + (int)size / 2; i++)
             {
-                top[i, j] = (int)(scale * Mathf.PerlinNoise(
-                    offsetX + i / size, offsetY + j / size) - scale / 2);
+                for (int j = (int)character.transform.position.z - (int)size / 2;
+                    j < (int)character.transform.position.z + (int)size / 2; j++)
+                {
+                    if (!map.Contains(new Vector2(i, j)))
+                    {
+                        Instantiate(grass, new Vector3(i, generate_top(i, j), j), Quaternion.identity);
+                        map.Add(new Vector2(i, j));
+                    }
+                }
             }
+            lastRefreshTime = Time.time;
         }
-        return top;
+    }
+
+    int generate_top(int x, int z)
+    {
+        float scale = 20f;
+        int res = (int)(scale * Mathf.PerlinNoise(
+            offsetX + x / size, offsetY + z / size) - scale / 2);
+        return res;
     }
 }

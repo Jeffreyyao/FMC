@@ -5,7 +5,7 @@ using UnityEngine;
 public class character_control : MonoBehaviour
 {
     float yaw = 0f;
-    float translate_speed = 0.2f;
+    float translate_speed = 0.15f;
 
     bool isFly = true;
     float lastClickTime = 0f;
