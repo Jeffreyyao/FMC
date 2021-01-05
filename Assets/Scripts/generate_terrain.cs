@@ -25,6 +25,8 @@ public class generate_terrain : MonoBehaviour
 
     void Start()
     {
+        grass.tag = "Terrain";
+
         //Randomize position offset for randomized perlin noise
         offsetX = r.Next(0, 999);
         offsetY = r.Next(0, 999);
