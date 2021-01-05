@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4612746676329004971}
   m_Layer: 0
   m_Name: glass
-  m_TagString: Cube
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

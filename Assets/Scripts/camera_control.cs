@@ -18,12 +18,13 @@ public class camera_control : MonoBehaviour
         pitch -= speed * Input.GetAxis("Mouse Y");
         transform.localEulerAngles = new Vector3(pitch, 0f, 0f);
 
-        if (Input.GetKeyDown(KeyCode.Escape) && Cursor.visible==false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-        else
+
+        if (Input.GetMouseButtonDown(0))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

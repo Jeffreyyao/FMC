@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 176808051}
   - component: {fileID: 176808052}
   - component: {fileID: 176808053}
+  - component: {fileID: 176808054}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -261,6 +262,18 @@ MonoBehaviour:
   glowstone_t: {fileID: 2800000, guid: 69f0060c42e734881bc8d77cfaeba69e, type: 3}
   brick_t: {fileID: 2800000, guid: 7acb9399aa3ba4163a88987782e5cbf1, type: 3}
   glass_t: {fileID: 2800000, guid: 49d118ed0f9374a38a159d6f39564d22, type: 3}
+--- !u!114 &176808054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176808047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeab846e9bebb4dacbd85816041d8b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &588586722
 GameObject:
   m_ObjectHideFlags: 0

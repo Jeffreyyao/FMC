@@ -15,8 +15,6 @@ public class generate_terrain : MonoBehaviour
 
     Vector3 lastCharPos;
 
-    List<GameObject> cubes = new List<GameObject>();
-
     List<Vector2> map = new List<Vector2>();
 
     List<Vector2> addedCubes = new List<Vector2>();
@@ -28,16 +26,16 @@ public class generate_terrain : MonoBehaviour
         grass.tag = "Terrain";
 
         //Randomize position offset for randomized perlin noise
-        offsetX = r.Next(0, 999);
-        offsetY = r.Next(0, 999);
+        offsetX = 0;
+        offsetY = 0;
 
         //Create top grass cubes
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
             {
-                cubes.Add(Instantiate(grass,
-                    new Vector3(i, generate_top(i,j), j), Quaternion.identity));
+                Instantiate(grass,
+                    new Vector3(i, generate_top(i, j), j), Quaternion.identity);
                 map.Add(new Vector2(i, j));
             }
         }

@@ -47,6 +47,32 @@ public class block_create_destroy : MonoBehaviour
             brick_t,
             glass_t
         };
+
+        string saved_blocks = PlayerPrefs.GetString("saved_blocks", "");
+        Debug.Log(saved_blocks);
+        if (saved_blocks != "")
+        {
+            string[] cubes = saved_blocks.Split(new char[] { '\n' });
+            List<string> cubeData = new List<string>(cubes);
+            cubeData.RemoveAt(cubeData.Count - 1);
+            foreach (string s in cubeData)
+            {
+                string name = s.Split(new char[] { ';' })[0];
+                string pos = s.Split(new char[] { ';' })[1];
+                Vector3 p = new Vector3(
+                    float.Parse(pos.Split(new char[] { ',' })[0]),
+                    float.Parse(pos.Split(new char[] { ',' })[1]),
+                    float.Parse(pos.Split(new char[] { ',' })[2])
+                );
+                foreach(GameObject g in cubeList)
+                {
+                    if (name == g.name)
+                    {
+                        Instantiate(g, p, Quaternion.identity);
+                    }
+                }
+            }
+        }
     }
 
     void Update()
@@ -65,14 +91,14 @@ public class block_create_destroy : MonoBehaviour
         }
 
         RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
         //Destroy Cube
         if (Input.GetKeyDown(KeyCode.Mouse0)||Input.GetKeyDown(KeyCode.E))
         {
+            Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             if (Physics.Raycast(ray, out hit, 15))
             {
-                if (hit.transform.tag != "Cube")
+                if (hit.transform.tag != "Cube" && hit.transform.tag != "Terrain")
                 {
                     Destroy(hit.transform.parent.gameObject);
                 }
@@ -86,11 +112,12 @@ public class block_create_destroy : MonoBehaviour
         //Create Cube
         if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.R))
         {
+            Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
             if (Physics.Raycast(ray, out hit, 15))
             {
                 Vector3 hitPos = hit.point;
                 Vector3 hitTransPos;
-                if (hit.transform.tag == "Cube")
+                if (hit.transform.tag == "Cube" || hit.transform.tag == "Terrain")
                 {
                     hitTransPos = hit.transform.position;
                 }
