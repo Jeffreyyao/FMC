@@ -23,13 +23,12 @@ public class generate_terrain : MonoBehaviour
 
     void Start()
     {
-        grass.tag = "Terrain";
-
         //Randomize position offset for randomized perlin noise
         offsetX = 0;
         offsetY = 0;
 
         //Create top grass cubes
+        grass.tag = "Terrain";
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)

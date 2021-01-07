@@ -14,7 +14,7 @@ public class save_blocks : MonoBehaviour
             string pos = g.transform.position.ToString().Replace("(","").Replace(")", "");
             
             cubeData += name + ";" + pos + "\n";
-            PlayerPrefs.SetString("saved_blocks", cubeData);
         }
+        PlayerPrefs.SetString("saved_blocks", cubeData);
     }
 }
