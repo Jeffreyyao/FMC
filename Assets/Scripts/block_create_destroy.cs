@@ -15,6 +15,7 @@ public class block_create_destroy : MonoBehaviour
     public GameObject glowstone;
     public GameObject brick;
     public GameObject glass;
+    public GameObject quartz;
 
     public Texture cobblestone_t;
     public Texture grass_t;
@@ -22,6 +23,7 @@ public class block_create_destroy : MonoBehaviour
     public Texture glowstone_t;
     public Texture brick_t;
     public Texture glass_t;
+    public Texture quartz_t;
 
     List<GameObject> cubeList;
     List<Texture> textureList;
@@ -36,7 +38,8 @@ public class block_create_destroy : MonoBehaviour
             dirt,
             glowstone,
             brick,
-            glass
+            glass,
+            quartz
         };
         textureList = new List<Texture>()
         {
@@ -45,7 +48,8 @@ public class block_create_destroy : MonoBehaviour
             dirt_t,
             glowstone_t,
             brick_t,
-            glass_t
+            glass_t,
+            quartz_t
         };
 
         string saved_blocks = PlayerPrefs.GetString("saved_blocks", "");

@@ -13,11 +13,7 @@ public class generate_terrain : MonoBehaviour
 
     float size = 30;
 
-    Vector3 lastCharPos;
-
     List<Vector2> map = new List<Vector2>();
-
-    List<Vector2> addedCubes = new List<Vector2>();
 
     float lastRefreshTime = 0f;
 
