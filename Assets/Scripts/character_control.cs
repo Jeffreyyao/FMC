@@ -42,7 +42,11 @@ public class character_control : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.GetComponent<Rigidbody>().AddForce(0, 9999999+20000000, 0);
+            rb.velocity = speed * Vector3.up;
+        }
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity = rb.velocity - 0.3f * Vector3.up;
         }
     }
 }
